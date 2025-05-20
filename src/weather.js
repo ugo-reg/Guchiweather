@@ -18,9 +18,37 @@ form.addEventListener("submit", search);
 
     function displayTemperature(response) {
       let temperatureElement = document.querySelector("#temperature");
+      let cloudELement= document.querySelector("#cloud")
+      let humidityElement=document.querySelector("#detail")
+      let windElement=document.querySelector("#details")
+      let timeElement=document.querySelector("#time")
+      let date= new Date(response.data.time * 1000) 
+      
       if (temperatureElement) {
         let Temp = Math.round(response.data.temperature.current);
-        temperatureElement.innerHTML = `${Temp}°C`;
+       let cloud=response.data.condition.description;
+       let humidity=response.data.temperature.humidity;
+       let wind=response.data.wind.speed;
        
+        temperatureElement.innerHTML = `${Temp}°C`;
+        cloudELement.innerHTML= `${cloud}`;
+        humidityElement.innerHTML=`${humidity}%`;
+        windElement.innerHTML=`${wind}km/h`;
+        timeElement.innerHTML= formatDate(date);
+
       }
+    }
+    
+    function formatDate(date){
+       
+        let minutes=date.getMinutes();
+        let hours= date.getHours();
+        let days= ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let day = days[date.getDay()];
+
+        if(minutes< 10){
+            minutes=`0${minutes}`;
+        }
+
+        return `${day} ${hours}: ${minutes}`
     }

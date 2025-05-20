@@ -25,7 +25,6 @@ border:none;
 
 input:hover{
     cursor:pointer;
-    transform: scale(1.1);
 }
 #submit-buton{background-color: navy;
 color:antiquewhite;
