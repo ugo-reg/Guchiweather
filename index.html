@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my app</title>
+    <link rel="stylesheet" href="../src/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Exile&family=Oregano:ital@0;1&display=swap" rel="stylesheet">
 </head>
 
-    <main>
+    
+        <div class="container">
+            <main>
         <header>
-          <form>
+          <form id="form" class="form-cover">
             <input type="text" placeholder="enter a city" required/>
-            <input type="submit" value="search"/>
+            <input type="submit" value="search" id="submit-buton"/>
         </form>
         </header>
         <div>
@@ -18,9 +24,10 @@
           Nigeria
         </h1>
         <p> Tuesday 9:10, clear sky <br/>
-        Humidity: 55%, Wind: 2.98km/h</p>
+        Humidity: 55%<br/>
+        Wind: 2.98km/h</p>
         </div>
-        <div>
+        <div class="temperature">
           🌕 29&deg;C
         </div>
   </main>
@@ -29,4 +36,5 @@
 <a href="https://github.com/ugo-reg/Guchiweather" target="_blank"> github</a> and website hosted on
  <a href="https://ugochi-weatherapp-001.netlify.app/">Netflify</a>
 </footer>
+</div>
 </html>
