@@ -10,23 +10,42 @@ font-size:30px;
 font-family:"Oregano", cursive;
 font-weight: 400;
     font-style: normal;
-    box-shadow: 0 30px 50px rgba(0, 0 ,0, 0.2);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
 }
 
-.form-cover{text-align: center;
-margin:10px;}
+.form-cover{
+margin:10px;
+
+}
 input{font-size: 25px;
 font-family: "Oregano";
-border-radius: 10px;}
+border-radius: 10px;
+border:none;
+}
+
 input:hover{
     cursor:pointer;
     transform: scale(1.1);
 }
 #submit-buton{background-color: navy;
-color:antiquewhite;}
+color:antiquewhite;
+border:none;}
 
 .temperature{display: flex;
 position: relative;
 justify-content: right;
-top:-150px;
-font-size:80px;}
+top:-190px;
+}
+
+footer{font-size:20px;
+text-align:center;}
+
+#search-form-input{width:400px;}
+
+.detail{color:red;}
+.emoji{position:relative;
+    top:50px;
+    font-size:60px;
+}
+
+.number{font-size: 120px;}
