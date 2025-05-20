@@ -61,8 +61,3 @@ max-width: 400px;}
     }
 
 .number{font-size: 120px;}
-.grid{display:grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 20px;
-    place-items: center;
-}
