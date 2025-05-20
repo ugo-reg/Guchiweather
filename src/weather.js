@@ -23,10 +23,9 @@ form.addEventListener("submit", search);
       let windElement=document.querySelector("#details")
       let timeElement=document.querySelector("#time")
       let date= new Date(response.data.time * 1000) 
-      
+     
       let iconElement = document.querySelector("#weather-icon")
-        iconElement.innerHTML=`<img src=${response.data.condition.icon_url} />`
-      ;
+        
       
       if (temperatureElement) {
         let Temp = Math.round(response.data.temperature.current);
@@ -39,6 +38,7 @@ form.addEventListener("submit", search);
         humidityElement.innerHTML=`${humidity}%`;
         windElement.innerHTML=`${wind}km/h`;
         timeElement.innerHTML= formatDate(date);
+        iconElement.innerHTML = `<img src=${response.data.condition.icon_url} />`;
 
       }
     }
