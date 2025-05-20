@@ -44,7 +44,8 @@ text-align:center;}
 .detail{color:red;}
 .emoji{position:relative;
     top:50px;
-    font-size:60px;
+    height:60px;
+    
 }
 
 .number{font-size: 120px;}

@@ -24,6 +24,10 @@ form.addEventListener("submit", search);
       let timeElement=document.querySelector("#time")
       let date= new Date(response.data.time * 1000) 
       
+      let iconElement = document.querySelector("#weather-icon")
+        iconElement.innerHTML=`<img src=${response.data.condition.icon_url} />`
+      ;
+      
       if (temperatureElement) {
         let Temp = Math.round(response.data.temperature.current);
        let cloud=response.data.condition.description;
