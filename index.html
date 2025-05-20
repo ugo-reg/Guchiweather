@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Exile&family=Oregano:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 </head>
-
+<body>
     
         <div class="container">
             <main>
@@ -28,7 +29,7 @@
         Wind: <span class="detail">2.98km/h</span></p>
         </div>
         <div class="temperature">
-         <span class="emoji"> 🌕 </span><strong class="number">29&deg;C</strong>
+         <span class="emoji"> 🌕 </span><strong class="number" id="temperature">29&deg;C</strong>
         </div>
   </main>
 <footer> Coded by
@@ -37,4 +38,6 @@
  <a href="https://ugochi-weatherapp-001.netlify.app/">Netflify</a>
 </footer>
 </div>
+<script src="../src/weather.js"></script>
+</body>
 </html>
