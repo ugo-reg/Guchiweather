@@ -106,3 +106,14 @@ form.addEventListener("submit", search);
         let forecast = document.querySelector("#weather-forecast-day");
         forecast.innerHTML = forecastHtml;
       } 
+
+      window.onload = function () {
+        getWeatherForDefaultCity("Abuja");
+      };
+
+      function getWeatherForDefaultCity(city) {
+        document.querySelector("#search-form-input").value = "";
+        let apiKey = "3ee9046f22cb8dtcf3aa949o097a3347";
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(displayTemperature);
+      }
