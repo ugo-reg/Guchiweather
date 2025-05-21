@@ -10,9 +10,9 @@ body{background-image:url("https://images.pexels.com/photos/956981/milky-way-sta
 margin:0 auto;
 padding:10px;
 width:90%;
-max-width: 500px;
+max-width: 600px;
 border-radius: 10px;
-margin-top:50px;
+margin-top:0px;
 font-size:30px;
 font-family:"Oregano", cursive;
 font-weight: 400;
@@ -61,3 +61,22 @@ max-width: 400px;}
     }
 
 .number{font-size: 88px;}
+
+.date{text-align: center;}
+.icon{color:brown;
+text-align: center;}
+
+.weather-forecast-temperature{color:red;
+    padding:0 10px;
+
+    }
+    .weather-forecast-temperatures{color:red;
+        text-align: center;
+    display:flex;
+    justify-content: center;
+    margin-top: 0 10px;
+        }
+        .weather-forecast-day{display:flex;
+            justify-content: space-around;
+
+        }
