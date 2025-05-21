@@ -63,31 +63,46 @@ form.addEventListener("submit", search);
         return `${day} ${hours}: ${minutes}`
     }
 
+    function formatDay(timestamp) {
+      let date = new Date(timestamp * 1000);
+      let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      return days[date.getDay()];
+    }
+
     function getForecast(city) {
       let apiKey = "3ee9046f22cb8dtcf3aa949o097a3347";
       let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
       axios.get(apiUrl).then(displayForeCast);
     }
 
-    function displayForeCast(response) {
-      let forecast = document.querySelector("#weather-forecast-day");
-      let days = ["Thur", "Fri", "Sat", "Sun", "Mon"];
-      let forecastHtml = "";
+    function displayForeCast(response){
+ 
 
-      days.forEach(function (day) {
-        forecastHtml =
-          forecastHtml +
-          `
+        let forecastHtml = "";
+      
+        response.data.daily.forEach(function (day, index) {
+          if (index > 0 && index < 6) {
+          forecastHtml =
+            forecastHtml +
+            `
           <div class="weather-forecast">
-                  <div class="date"> ${day}</div>
-              <div class="icon">☀</div> 
+                  <div class="weather-forecast-date">${formatDay(day.time)}</div>
+              <div ><img src="${
+                day.condition.icon_url
+              }" class="weather-forecast-icon"</div> 
               <div class="weather-forecast-temperatures">
-                  <div class="weather-forecast-temperature"> 25&deg;C </div>
-                  <div class="weather-forecast-temperature">8&deg;</div>
+                  <div class="weather-forecast-temperature"> ${Math.round(
+                    day.temperature.maximum
+                  )}&deg;C </div>
+                  <div class="weather-forecast-temperature">${Math.round(
+                    day.temperature.minimum
+                  )}&deg;</div>
           </div>
           </div>
       `;
-      });
-      forecast.innerHTML = forecastHtml;
-    }
-    displayForeCast();
+              }
+        });
+        let forecast = document.querySelector("#weather-forecast-day");
+        forecast.innerHTML = forecastHtml;
+      } 
